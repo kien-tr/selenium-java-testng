@@ -4,6 +4,15 @@ out/
 !**/src/test/**/out/
 .kotlin
 
+target/
+out/
+test-output/
+.idea/
+*.log
+*.png
+*.mp4
+
+
 ### Eclipse ###
 .apt_generated
 .classpath

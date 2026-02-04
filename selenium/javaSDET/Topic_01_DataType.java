@@ -42,5 +42,4 @@ public class Topic_01_DataType {
     Integer[] studentPhone = {8223212, 21323222, 32132122};
     List<String> studenAddress = new ArrayList<String>();
     List<String> studentCity = new LinkedList<String>();
-
 }
