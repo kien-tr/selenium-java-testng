@@ -26,24 +26,31 @@ public class Topic_02_Selenium_Locator {
     //Cú pháp Xpath: //tagname[@attribute='value']
     //Cú pháp Css: tagname[attribute='value']
     @Test
-    public void TC_01_ID() {
-        driver.findElement(By.id("small-searchterms"));
-        driver.findElement(By.id("FirstName"));
+    public void Find_Element_By_ID() {
+        driver.findElement(By.id("gender")).click();
+        driver.findElement(By.id("FirstName")).sendKeys("Tran");
+        driver.findElement(By.id("LastName")).sendKeys("Kien");
+        driver.findElement(By.id("Email")).sendKeys("abc@gmail.com");
+        driver.findElement(By.id("Company")).sendKeys("Company");
+        driver.findElement(By.id("NewsLetterSubscriptions_0__IsActive")).click();
+        driver.findElement(By.id("Password")).sendKeys("123dsadas");
+        driver.findElement(By.id("ConfirmPassword")).sendKeys("123dsadas");
     }
 
     @Test
-    public void TC_02_Class() {
-        driver.findElement(By.className("register-next-step-button"));
+    public void Find_Element_By_Class() {
+        driver.findElement(By.className("button-1 register-next-step-button"));
+
     }
 
     @Test
-    public void TC_03_Name() {
+    public void Find_Element_By_Name() {
         driver.findElement(By.name("textbox"));
 
     }
 
     @Test
-    public void TC_04_LinkText() {
+    public void Find_Element_By_LinkText() {
         //Chỉ làm việc với element là link và có text
         //Thẻ a có thuộc tính href
         //Phải lấy hết toàn bộ text
@@ -53,7 +60,7 @@ public class Topic_02_Selenium_Locator {
     }
 
     @Test
-    public void TC_05_Partial_Link_Text() {
+    public void Find_Element_By_Partial_Link_Text() {
         //Chỉ làm việc với element là link
         //Có thể lấy toàn bộ text hoặc 1 phần
         driver.findElement(By.partialLinkText("Conditions"));
@@ -61,7 +68,7 @@ public class Topic_02_Selenium_Locator {
     }
 
     @Test
-    public void TC_06_Tagname() {
+    public void Find_Element_By_Tagname() {
         //Tên thẻ HTML
         //Khi muốn tìm tất cả element giống nhau (thẻ của component giống nhau)
         //Tất cả textbox/ button/ checkbox/ link/ radio/...
@@ -71,7 +78,7 @@ public class Topic_02_Selenium_Locator {
     }
 
     @Test
-    public void TC_07_CSS() {
+    public void Find_Element_By_CSS() {
         driver.findElement(By.cssSelector("input#Company"));
         driver.findElement(By.cssSelector("#Company"));
         driver.findElement(By.cssSelector("input[id='Company']"));
@@ -79,7 +86,7 @@ public class Topic_02_Selenium_Locator {
     }
 
     @Test
-    public void TC_08_Xpath() {
+    public void Find_Element_By_Xpath() {
         driver.findElement(By.tagName(""));
     }
 
