@@ -5,7 +5,6 @@ out/
 .kotlin
 
 target/
-out/
 test-output/
 .idea/
 *.log

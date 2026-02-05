@@ -2,7 +2,9 @@ package webdriver;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -80,7 +82,30 @@ public class Topic_02_Selenium_Locator {
     public void TC_08_Xpath() {
         driver.findElement(By.tagName(""));
     }
-dsdsadsa
+
+    @Test
+    public void TC_09_Relative_Locator() {
+        driver.get("https://demo.nopcommerce.com/login");
+        //Element A
+        By passwordTextboxBy = By.cssSelector("input#Password");
+
+        //Element B
+        By rememberMeCheckboxBy = By.id("RememberMe");
+
+        //Element C
+        By forgotPasswordLinkBy = By.cssSelector("span.forgot-password");
+
+        //Element D
+        By loginButtonBy = By.cssSelector("button.login-button");
+
+        //Element E
+        WebElement rememberMeText = driver.findElement(RelativeLocator.with(By.tagName("label"))
+                .above(loginButtonBy) //label đang nằm trên cái login button
+                .below(passwordTextboxBy) //label đang nằm dưới cái textbox password
+                .toRightOf(rememberMeCheckboxBy) //label đang nằm bên phải cái check box remember me
+                .toLeftOf(forgotPasswordLinkBy) //label đang nằm bên trái cái link text forgot pssword
+        );
+    }
 
 
     @AfterClass
